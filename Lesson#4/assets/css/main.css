@@ -1,0 +1,166 @@
+* {
+    font-family: Arial, Helvetica, sans-serif;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+ }
+ .container {
+    width: 90%;
+    max-width: 950px;
+    margin: 0 auto;
+ }
+  .news__block {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 20px 0;
+ }
+ .news__card {
+    flex-basis: 31%;
+    min-width: 205px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-content: space-between;
+    padding: 20px;
+    box-shadow: 0px 4px 10px #ddd;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    cursor: pointer;
+ }
+ .news__card:hover {
+    box-shadow: 0px 4px 10px #C5CAE9;
+ }
+ a, .news__title {
+    color: #000;
+    font-size: 18px;
+    margin-bottom: 15px;
+    text-decoration: none;
+ }
+ .news__card:hover > .news__title {
+    color: #303F9F;
+ }
+ .news__icon {
+    visibility: hidden;
+    height: 20px;
+ }
+ .news__card:hover > .news__icon {
+    visibility: visible;
+ }
+ .news__category {
+    display: inline-block;
+    padding: 4px;
+    border-radius: 4px;
+    font-size: 10px;
+    text-transform: uppercase;
+    color: #fff;
+    background-color: #ccc;
+    justify-self: flex-end;
+ }
+ 
+ .politics {
+    background-color: #607D8B;
+ }
+ .society {
+    background-color: #009688;
+ }
+ .business {
+    background-color: #3F51B5;
+ }
+ .world {
+    background-color: #FF9800;
+ }
+ .incident {
+    background-color: #FF5252;
+ }
+ .culture {
+    background-color: #FF4081;
+ }
+ .computers {
+    background-color: #0288D1;
+ }
+ .science {
+    background-color: #4CAF50;
+ }
+ .auto {
+    background-color: #795548;
+ }
+ .form__user-choice { 
+    padding: 30px;
+    margin-bottom: 20px;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+    background-color: #303F9F;
+    box-shadow: 0px 4px 10px #ccc;
+    color: #fff;
+ }
+ .form__title {
+    margin-bottom: 20px;
+    font-weight: bold;
+    font-size: 18px;
+ }
+ .form__options {
+    display: flex;
+ }
+ .form__categories {
+    flex-basis: 80%;
+ }
+ .form__category {
+    display: inline-flex;
+    align-items: baseline;
+    width: 140px;
+    margin-right: 15px;
+    margin-bottom: 8px;
+    font-size: 16px;
+ }
+ input {
+    margin-right: 8px;
+ }
+ input, label, button, select {
+    cursor: pointer;
+ }
+ select {
+    width: 90px;
+    height: 20px;
+    font-size: 14px;
+ }
+ .form__quantity {
+    flex-basis: 20%;
+ }
+ .form__text {
+    margin-bottom: 8px;
+     line-height: 22px;
+ }
+ .form__buttons {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    margin-top: 15px;
+ }
+ .form__submit {
+    width: 120px;
+    padding: 8px;
+    margin-right: 15px;
+    font-weight: bold;
+    font-size: 16px;
+    text-align: center;
+    color: #303F9F;
+    background-color: #fff;
+    border: none;
+    border-radius: 8px;
+ }
+ .form__submit:hover {
+    color: #448AFF;
+ }
+ .form__reset {
+    color: #fff;
+    background: none;
+    border: none;
+    border-bottom: 1px solid #fff;
+    font-size: 16px;
+ }
+ .form__reset:hover {
+    color: #448AFF;
+    border-bottom: 1px solid #448AFF;
+ }
+ 
