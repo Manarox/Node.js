@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Agenda | Sign in</title>
+   <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,700&display=swap&subset=cyrillic" rel="stylesheet">
+</head>
+<body>
+
+   <main>
+      <div>
+         <img src="/images/logo-mono.png" alt="Agenda">
+         <h1>Sign in to Agenda</h1>
+         <div>
+            {{message}}
+         </div>
+         <form action="/sign_in" method="POST">
+            <input type="text" name="username" id="username" placeholder="Username">
+            <input type="password" name="password" id="password" placeholder="Password">
+            <div class="login__remember">
+               <input type="checkbox" name="remember_me" id="remember_me" value='1'>
+               <label for="remember_me">Remember me</label>
+            </div>
+            <button type="submit">Submit</button>
+         </form>
+         <p>New to Agenda? <a href="/sign_up">Create an account.</a></p>
+      </div>
+   </main>
+</body>
+</html>
