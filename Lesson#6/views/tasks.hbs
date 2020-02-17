@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Agenda | Manage your tasks, reach your goals</title>
+   <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,700&display=swap&subset=cyrillic" rel="stylesheet">
+</head>
+<body>
+   <div>
+      <header class="header">
+         <img src="/images/logo-color.png" alt="Agenda">
+         <div>
+            <a href='#'>{{user.username}}</a>
+            <a href="/logout" class="logout__link"><img src="/images/icon-logout.svg" alt="Log out"></a>
+         </div>
+      </header>
+      <main>
+         <form action="/tasks" method="POST">
+            <input type="text" name="taskBody" id="taskBody" placeholder="Should you do something?">
+            <select size="1" name="priority">
+               {{#each priority}}
+                  {{!-- <option value="Priority"></option> --}}
+                  <option value="{{this}}">{{this}}</option>
+               {{/each}}
+            </select>
+            <input type="date" name="deadline" id="deadline">
+            <input type="hidden" name="author" id="author" value="{{user._id}}">
+            <button type="submit">Add new task</button>
+         </form>
+         <div>
+            {{#each tasks}}
+               <div>
+                  <p>{{this.taskBody}}</p>
+                  <span>{{this.priority}}</span>
+                  <span>{{!-- {{this.deadline}} --}}</span>
+                  <div>
+                     <div>
+                        {{#if this.completed}}done{{/if}}
+                     </div>
+                     <form action="/tasks/complete" method="POST">
+                        <input type="hidden" name="complete" value="{{this._id}}">
+                        <button value="submit" {{#if this.completed}}disabled{{/if}}>{{#if this.completed}}{{else}}<img src="/images/icon_done.svg" alt="Mark as done">{{/if}}</button>
+                     </form>
+                     <form action="/tasks/delete" method="POST">
+                        <input type="hidden" name="delete" value="{{this._id}}">
+                        <button value="submit"><img src="/images/icon_delete.svg" alt="Delete task"></button>
+                     </form>
+                  </div>
+               </div>
+            {{/each}}
+         </div>
+      </main>
+   </div>
+   <script>
+      const date = new Date()
+      const formatDate = date.getFullYear() + '-' + (date.getMonth() < 9 ? '0' : '') + (date.getMonth() + 1) + '-' + (date.getDate() < 10 ? '0' : '') + date.getDate()
+      document.getElementById("deadline").value = formatDate;
+      document.getElementById('deadline').setAttribute('min', formatDate);
+   </script>
+</body>
+</html>
